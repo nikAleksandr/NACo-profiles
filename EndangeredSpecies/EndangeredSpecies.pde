@@ -3,7 +3,7 @@ PFont countyNameFont, numbers2015, graphNumbers, countyNumbers2015;
 PShape template;
 PImage infographic;
 Table data;
-int numRows, cr = 130; // current row
+int numRows, cr = 0; // current row
 
 //set parameters for line graphs
 int graph1X= 143, graph2X= graph1X + 220, graph3X= graph2X + 220; 
@@ -13,10 +13,10 @@ int graphBeginYear = 1967, graphEndYear = 2015;
 
 void setup() {
   size(792, 612);
-  countyNameFont = createFont("MuseoSlab-500", 22);
-  numbers2015 = createFont("BebasNeueRegular", 48);
+  countyNameFont = createFont("MuseoSlab_500.otf", 22);
+  numbers2015 = createFont("BebasNeue Regular.otf", 48);
   graphNumbers = createFont("Helvetica Neue Light", 7);
-  countyNumbers2015 = createFont("BebasNeueRegular", 16);
+  countyNumbers2015 = createFont("BebasNeue Regular.otf", 16);
   
   smooth();
   template = loadShape("template.svg");
@@ -30,7 +30,7 @@ void setup() {
 
 void draw(){
   buildProfile();
-  //cr++;
+  cr++;
   if(cr==numRows) exit();
 }
 
@@ -84,6 +84,8 @@ void buildProfile(){
   
   numbers2015();
   countyNumbers2015(); 
+  
+  endRecord();
 }
 
 class YearLineGraph {
@@ -214,7 +216,7 @@ class YearLineGraph {
             textFont(graphNumbers);
             textAlign(RIGHT, CENTER);
             fill(51,51,51);
-            text(nf(yVal, 0, 0), xPos-3, yCurLoc);
+            text(nfc(yVal,0), xPos-3, yCurLoc);
             strokeWeight(1);
             stroke(153,153,153);
             line(xPos, yCurLoc, xPos+w, yCurLoc);
@@ -272,9 +274,9 @@ void numbers2015(){
   textAlign(CENTER, BOTTOM);
   stroke(0);
   fill(0);
-  text(county, 230, 189);
-  text(state, 450, 189);
-  text(national, 670, 189);
+  text(nfc(county), 230, 189);
+  text(nfc(state), 450, 189);
+  text(nfc(national), 670, 189);
   
 }
 void countyNumbers2015(){
@@ -288,12 +290,12 @@ void countyNumbers2015(){
   stroke(0);
   fill(0);
   textAlign(RIGHT, BOTTOM);
-  text(endangered, 286, 403);
-  text(threatened, 286, 422);
-  text(newListing, 286, 452);
-  text(delisting, 286, 482);
+  text(nfc(endangered), 286, 403);
+  text(nfc(threatened), 286, 422);
+  text(nfc(newListing), 286, 452);
+  text(nfc(delisting), 286, 482);
   
   textAlign(CENTER, BOTTOM);
-  text(pop14, 79, 424);
+  text(nfc(pop14), 79, 424);
 }
 
