@@ -16,7 +16,7 @@ void setup() {
   countyNameFont = createFont("MuseoSlab_500.otf", 22);
   numbers2015 = createFont("BebasNeue Regular.otf", 48);
   graphNumbers = createFont("Helvetica Neue Light", 7);
-  countyNumbers2015 = createFont("BebasNeue Regular.otf", 16);
+  countyNumbers2015 = createFont("BebasNeue Bold.otf", 16);
   
   smooth();
   template = loadShape("template.svg");
