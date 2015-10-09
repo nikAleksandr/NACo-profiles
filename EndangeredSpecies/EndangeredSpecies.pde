@@ -31,6 +31,7 @@ void setup() {
 void draw(){
   buildProfile();
   cr++;
+  println(cr);
   if(cr==numRows) exit();
 }
 
@@ -53,6 +54,9 @@ void buildProfile(){
       break; 
     case 2020:
       countyName = "Anchorage Borough";
+      break;
+    case 25025:
+      countyName = "Suffolk County, City of Boston";
       break;
     default:
       countyName = data.getString(cr, "County");
