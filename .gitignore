@@ -1,5 +1,10 @@
-**/profiles/**
-**/profiles/**
+"CDBG Profiles"/*
+Exim_profiles/ExIm_profileCoding/profiles/*
+"MITFA Profiles/mitfa_profiles/profiles"/*
+"MITFA Profiles/mitfa_profiles/profiles_med"/*
+CountyEconomicTracker/profiles/*
+EndangeredSpecies/profiles/*
+*/profiles/*
 
 # Compiled source #
 ###################
